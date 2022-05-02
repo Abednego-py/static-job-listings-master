@@ -35,6 +35,12 @@ const data = fetch('./data.json')
                 let filter_ = document.createElement('p')
                 filter_.innerHTML = filter
                 searchbox.appendChild(filter_)
+
+                for(let i=0; i< col4.length; i++){
+                    if(!col4[i].innerText.includes(searchbox.innerText)){
+                        card[i].setAttribute('id', 'don2')
+                    }
+                }
                 searchbox.setAttribute('class', 'search-items')
                 clear.style.display = 'block'
             })
@@ -51,6 +57,12 @@ const data = fetch('./data.json')
                 let filter_ = document.createElement('p')
                 filter_.innerHTML = filter
                 searchbox.appendChild(filter_)
+
+                for(let i=0; i< col4.length; i++){
+                    if(!col4[i].innerText.includes(searchbox.innerText)){
+                        card[i].setAttribute('id', 'don2')
+                    }
+                }
                 searchbox.setAttribute('class', 'search-items')
                 clear.style.display = 'block'
             })
@@ -87,6 +99,12 @@ clear.addEventListener('click', ()=> {
     searchbox.innerText = ''
     clear.style.display = 'none'
     searchbox.style.display = 'none'
+    for(let i=0; i< col4.length; i++){
+        card[i].removeAttribute('id','don2')
+    }
 })
+
+const card = document.getElementsByClassName('card')
+//search filter code
 
 
