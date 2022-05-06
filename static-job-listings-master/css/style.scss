@@ -6,11 +6,14 @@ $secFontWeight : 700;
 
 body {
     font-family: 'League Spartan', sans-serif;
+    background-color: rgb(248, 248, 248);
 }
 header {
     background-image: url(../images/bg-header-desktop.svg);
     height: 100px;
+    background-color: $colorPrimary;
     width: 100%;
+    margin-bottom: 6%;
 }
 
 @mixin position {
@@ -25,8 +28,16 @@ header {
     height: 100px;
     margin: auto;
     margin-top: 20px;
-    box-shadow: 1px 1px 0.5px 0.5px grey;
-    border: 0.2px solid grey;
+    box-shadow: 3px 1.5px 0.5px 0.5px hsl(180, 52%, 96%);
+    border: 0.1px thick grey;
+    background-color: #fff;
+
+    &:hover::before {
+        content: '';
+        background-color: $colorPrimary;
+        width: 3px;
+        height: 100px;
+    }
 
     .row {
         width: 100%;
@@ -44,7 +55,8 @@ header {
            margin-top: -2%;
            
            h4 {
-               font-weight: 500;
+               font-weight: 600;
+               margin-left: 2%;
            }
            .row-1{
                height: 30%;
@@ -54,8 +66,8 @@ header {
                h6{
                 position: relative;
                 left: 10px;
-                top: 5px;
-                font-size: 12px;
+                top: 2px;
+                font-size: 14px;
                 margin-right: 5px; 
                 color: $colorPrimary;
                }
@@ -65,9 +77,12 @@ header {
                    height: fit-content;
                    padding: 5px;
                    background-color: $colorPrimary;
-                   border-radius: 20%;
+                   border-radius: 40%;
                    font-weight: 500;
                    margin-right: 5px;
+                   margin-top: 8%;
+                   font-size: 0.7em;
+                   color: #fff;
                }
                .featured {
                 @include position();
@@ -75,8 +90,10 @@ header {
                 color: #fff;
                 width: fit-content;
                    height: fit-content;
+                   margin-top: 8%;
+                   font-size: 0.7em;
                    padding: 5px;
-                border-radius: 20%;
+                border-radius: 40%;
                }
            }
            .row-2{
@@ -101,6 +118,10 @@ header {
                 padding: 5px;
                 background-color: hsl(180, 52%, 96%);
                 cursor: pointer;
+                &:hover {
+                    background-color: hsl(180, 29%, 50%);
+                    color: #fff;
+                }
             }
             p:nth-child(2) {
               @extend p
@@ -108,6 +129,10 @@ header {
             .languages {
                 @extend p;
                 margin: 2px;
+                &:hover{
+                    background-color: hsl(180, 29%, 50%);
+                    color: #fff;
+                }
             }
         }
     }
@@ -133,22 +158,22 @@ header {
 
 img {
     height: 100%;
-    width: 93%;
+    width: 80%;
+    margin-left: 5%;
 }
 
 #searchbox {
     width: 80%;
     height: 30px;
     margin: auto;
-    border: 1px solid black;
-    box-shadow: 1px 1px grey;
     position: absolute;
     top: 16%;
     background-color: #fff;
     left: 10%;
-    display: none;
-
-  
+    display: none; 
+    box-shadow: 1px 1.5px 0.5px 0.5px hsl(180, 52%, 96%);
+    border: 0.1px thick grey;
+    background-color: #fff;
 }
 span {
     position: absolute;
@@ -177,9 +202,83 @@ span {
     height: 25px;
     border: 1px solid black;
     position: absolute;
-
+    top: 120px;
+    left: 10px;
+    display: none;
+    background-color: $colorPrimary;
     i {
-        width: 10px;
-        height: 10px;
+        width: 80%;
+        height: 80%;
+        color: #fff;
+        font-size: 30px;
+    }
+}
+
+hr {
+    display: none;
+}
+@media screen and (max-width: 768px) {
+    .card {
+        width: 90%;
+        height: 200px;
+
+        &:hover::before {
+            content: '';
+            background-color: $colorPrimary;
+            width: 3px;
+            height: 200px;
+        }
+        .row {
+            display: inline-flex;
+            flex-direction: column;
+
+            .col-1{
+                margin-top: 0;
+                position: relative;
+                top: -10px;
+                height: 10%;
+            }
+            .col-2 {
+                position: relative;
+                top: -10px;
+                height: 40%;
+                flex-direction: column;
+
+                .row-1{
+                    height: 35%;
+                    margin-top: 0;
+                    position: relative;
+                    top: -22px;
+                }
+                .row-2{
+                    height: 30%;
+                }
+                .row-3{
+                    height: 25%;
+                    position: relative;
+                    top: 5px;
+                    left: 5px;
+                }
+            }
+            .col-3{
+                height: 10%;
+            }
+            .col-4{
+                height: 45%;
+            }
+        }
+    }
+    img{
+        width: 10%;
+        height: 35px;
+    }
+    hr {
+        display: block;
+        border-style:inset;
+        width: 80%;
+        margin-top: 15px;
+        margin-left: -10px;
+        margin-left: 15px;
+        background-color: $colorPrimary;
     }
 }

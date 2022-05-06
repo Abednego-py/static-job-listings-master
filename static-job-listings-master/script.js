@@ -10,6 +10,37 @@ const data = fetch('./data.json')
         h4[i].innerHTML = data[i].position
         h6[i].innerHTML = data[i].company
 
+        role[i].addEventListener('click', (e)=> {
+            searchbox.style.display = 'block'
+            let filter = e.target.innerHTML
+            let filter_ = document.createElement('p')
+            filter_.innerHTML = filter
+            searchbox.appendChild(filter_)
+
+            for(let i=0; i< col4.length; i++){
+                if(col4[i].innerText.indexOf(searchbox.innerText) == -1){
+                    card[i].setAttribute('id', 'don2')
+                }
+            }
+            searchbox.setAttribute('class', 'search-items')
+            clear.style.display = 'block'
+        })
+
+        level[i].addEventListener('click', (e)=> {
+            searchbox.style.display = 'block'
+            let filter = e.target.innerHTML
+            let filter_ = document.createElement('p')
+            filter_.innerHTML = filter
+            searchbox.appendChild(filter_)
+
+            for(let i=0; i< col4.length; i++){
+                if(col4[i].innerText.indexOf(searchbox.innerText) == -1){
+                    card[i].setAttribute('id', 'don2')
+                }
+            }
+            searchbox.setAttribute('class', 'search-items')
+            clear.style.display = 'block'
+        })
         if(data[i].new !== true){
             new_[i].setAttribute('id','don2')
         }
@@ -37,7 +68,7 @@ const data = fetch('./data.json')
                 searchbox.appendChild(filter_)
 
                 for(let i=0; i< col4.length; i++){
-                    if(!col4[i].innerText.includes(searchbox.innerText)){
+                    if(col4[i].innerText.indexOf(searchbox.innerText) == -1){
                         card[i].setAttribute('id', 'don2')
                     }
                 }
@@ -59,7 +90,7 @@ const data = fetch('./data.json')
                 searchbox.appendChild(filter_)
 
                 for(let i=0; i< col4.length; i++){
-                    if(!col4[i].innerText.includes(searchbox.innerText)){
+                    if(col4[i].innerText.indexOf(searchbox.innerText) == -1){
                         card[i].setAttribute('id', 'don2')
                     }
                 }

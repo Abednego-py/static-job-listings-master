@@ -1,11 +1,14 @@
 body {
   font-family: 'League Spartan', sans-serif;
+  background-color: #f8f8f8;
 }
 
 header {
   background-image: url(../images/bg-header-desktop.svg);
   height: 100px;
+  background-color: #5ba4a4;
   width: 100%;
+  margin-bottom: 6%;
 }
 
 .card {
@@ -16,9 +19,17 @@ header {
   height: 100px;
   margin: auto;
   margin-top: 20px;
-  -webkit-box-shadow: 1px 1px 0.5px 0.5px grey;
-          box-shadow: 1px 1px 0.5px 0.5px grey;
-  border: 0.2px solid grey;
+  -webkit-box-shadow: 3px 1.5px 0.5px 0.5px #effafa;
+          box-shadow: 3px 1.5px 0.5px 0.5px #effafa;
+  border: 0.1px thick grey;
+  background-color: #fff;
+}
+
+.card:hover::before {
+  content: '';
+  background-color: #5ba4a4;
+  width: 3px;
+  height: 100px;
 }
 
 .card .row {
@@ -49,7 +60,8 @@ header {
 }
 
 .card .row .col-2 h4 {
-  font-weight: 500;
+  font-weight: 600;
+  margin-left: 2%;
 }
 
 .card .row .col-2 .row-1 {
@@ -66,8 +78,8 @@ header {
 .card .row .col-2 .row-1 h6 {
   position: relative;
   left: 10px;
-  top: 5px;
-  font-size: 12px;
+  top: 2px;
+  font-size: 14px;
   margin-right: 5px;
   color: #5ba4a4;
 }
@@ -84,9 +96,12 @@ header {
   height: fit-content;
   padding: 5px;
   background-color: #5ba4a4;
-  border-radius: 20%;
+  border-radius: 40%;
   font-weight: 500;
   margin-right: 5px;
+  margin-top: 8%;
+  font-size: 0.7em;
+  color: #fff;
 }
 
 .card .row .col-2 .row-1 .featured {
@@ -101,8 +116,10 @@ header {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  margin-top: 8%;
+  font-size: 0.7em;
   padding: 5px;
-  border-radius: 20%;
+  border-radius: 40%;
 }
 
 .card .row .col-2 .row-2 {
@@ -138,8 +155,18 @@ header {
   cursor: pointer;
 }
 
+.card .row .col-4 p:hover, .card .row .col-4 .languages:hover {
+  background-color: #5ba4a4;
+  color: #fff;
+}
+
 .card .row .col-4 .languages {
   margin: 2px;
+}
+
+.card .row .col-4 .languages:hover {
+  background-color: #5ba4a4;
+  color: #fff;
 }
 
 .item-below {
@@ -166,21 +193,23 @@ header {
 
 img {
   height: 100%;
-  width: 93%;
+  width: 80%;
+  margin-left: 5%;
 }
 
 #searchbox {
   width: 80%;
   height: 30px;
   margin: auto;
-  border: 1px solid black;
-  -webkit-box-shadow: 1px 1px grey;
-          box-shadow: 1px 1px grey;
   position: absolute;
   top: 16%;
   background-color: #fff;
   left: 10%;
   display: none;
+  -webkit-box-shadow: 1px 1.5px 0.5px 0.5px #effafa;
+          box-shadow: 1px 1.5px 0.5px 0.5px #effafa;
+  border: 0.1px thick grey;
+  background-color: #fff;
 }
 
 span {
@@ -215,10 +244,91 @@ span {
   height: 25px;
   border: 1px solid black;
   position: absolute;
+  top: 120px;
+  left: 10px;
+  display: none;
+  background-color: #5ba4a4;
 }
 
 #cancel i {
-  width: 10px;
-  height: 10px;
+  width: 80%;
+  height: 80%;
+  color: #fff;
+  font-size: 30px;
+}
+
+hr {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 90%;
+    height: 200px;
+  }
+  .card:hover::before {
+    content: '';
+    background-color: #5ba4a4;
+    width: 3px;
+    height: 200px;
+  }
+  .card .row {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .card .row .col-1 {
+    margin-top: 0;
+    position: relative;
+    top: -10px;
+    height: 10%;
+  }
+  .card .row .col-2 {
+    position: relative;
+    top: -10px;
+    height: 40%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .card .row .col-2 .row-1 {
+    height: 35%;
+    margin-top: 0;
+    position: relative;
+    top: -22px;
+  }
+  .card .row .col-2 .row-2 {
+    height: 30%;
+  }
+  .card .row .col-2 .row-3 {
+    height: 25%;
+    position: relative;
+    top: 5px;
+    left: 5px;
+  }
+  .card .row .col-3 {
+    height: 10%;
+  }
+  .card .row .col-4 {
+    height: 45%;
+  }
+  img {
+    width: 10%;
+    height: 35px;
+  }
+  hr {
+    display: block;
+    border-style: inset;
+    width: 80%;
+    margin-top: 15px;
+    margin-left: -10px;
+    margin-left: 15px;
+    background-color: #5ba4a4;
+  }
 }
 /*# sourceMappingURL=style.css.map */
